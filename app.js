@@ -1,6 +1,7 @@
 import Dashboard from "./pages/Dashboard.js";
 import Posts from "./pages/Posts.js";
 import Products from "./pages/Products.js";
+import NotFound from "./pages/NotFound.js";
 const contentMain = document.querySelector("#app");
 const navLinks = document.querySelectorAll(".nav__link");
 const nav = document.querySelector(".nav");
@@ -11,9 +12,21 @@ function router(params) {
     {path: "/posts", view: Posts},
     {path: "/products", view: Products},
   ];
-  const match = routes.find((item) => location.pathname === item.path);
-  // اگر مسیر تطابق داشت، نمایش صفحه مربوطه
-  contentMain.innerHTML = match.view();
+   const allRoutes = routes.map((item) => {
+     return {
+       route: item,
+       isMatch: location.pathname === item.path,
+     };
+   });
+   let match = allRoutes.find((item) => item.isMatch);
+
+   if (!match) {
+     match = {
+       route: {path: "/not-found", view: NotFound},
+       isMatch: true,
+     };
+   }
+   contentMain.innerHTML = match.route.view();
 }
 
 function navigateTo(url) {
