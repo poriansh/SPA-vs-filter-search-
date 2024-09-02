@@ -59,7 +59,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.nav.nav-active {
+.nav.nav--active{
   width: 6.4rem;
 }
 .nav__logo {
@@ -73,7 +73,7 @@ body {
   text-align: center;
   transition: all 200ms ease-in;
 }
-.nav-active .nav__logo {
+.nav--active .nav__logo {
   font-size: 1.2rem;
 }
 .nav__items {
@@ -99,11 +99,15 @@ body {
   border-radius: 1.5rem;
   font-size: 1.4rem;
 }
+.nav__link--active{
+  background-color: #eef2f8;
+  color: #2c4982;
+}
 .nav__link span,
 .nav__link svg {
   pointer-events: none;
 }
-.nav-active .nav__link span {
+.nav--active .nav__link span {
   display: none;
 }
 .nav__link svg {
@@ -128,7 +132,7 @@ body {
 .app-header {
   height: 10rem;
 }
-.nav-active + main .app-header {
+.nav--active + main .app-header {
   height: 7rem;
 }
 .app-version svg {
@@ -139,17 +143,17 @@ body {
   transition: all 200ms ease-in;
   display: none;
 }
-.nav-active .app-version svg {
+.nav--active .app-version svg {
   transform: rotate(0deg);
 }
-.nav-active .app-version .app-version__label {
+.nav--active .app-version .app-version__label {
   display: none;
 }
 #app {
   width:75vw;
   padding: 1.5rem;
 }
-.nav-active + #app{
+.nav--active + #app{
   width: calc(100vw - 6.4rem);
 }
 
