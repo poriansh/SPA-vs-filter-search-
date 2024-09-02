@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'iranyekan-light';
+  src: url("..//fonts/iranyekan/woff2/IRANYekanWebLight.woff2") format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'iranyekan-regular';
+  src: url("..//fonts/iranyekan/woff2/IRANYekanWebRegular.woff2") format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'iranyekan-medium';
+  src: url("..//fonts/iranyekan/woff2/IRANYekanWebMedium.woff2") format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'iranyekan-bold';
+  src: url("..//fonts/iranyekan/woff2/IRANYekanWebBold.woff2") format('woff2');
+  font-display: swap;
+}
+

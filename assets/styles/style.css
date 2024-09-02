@@ -1,0 +1,171 @@
+/*  VARIABLES : */
+:root {
+  --primaryColor: #6d28d9;
+  --secondaryColor: #ede9fe;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --mainTransition: all 0.3s linear;
+  --mainRed: #db2777;
+  --bodyColor: #f6f6f6;
+  --font-light: "iranyekan-light";
+  --font-regular: "iranyekan-regular";
+  --font-medium: "iranyekan-medium";
+  --font-bold: "iranyekan-bold";
+}
+html {
+  font-size: 62.5%;
+  /* عوض کردن واحد rem */
+  /* 62.5% = 10px */
+  -webkit-tap-highlight-color: transparent;
+  /* رفع کردن بگراند هنگام کلیک در موبایل */
+  /* اما ساپورت مرورگرش ضعیفه */
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  font-family: var(--font-bold);
+  font-size: 1.6rem;
+  color: var(--mainBlack);
+  background-color: var(--bodyColor);
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  transition: all 200ms ease-out;
+}
+
+.main-layout {
+  display: flex;
+}
+.nav {
+  height: 100vh;
+  width: 25vw;
+  background-color: #fff;
+  padding: 1.5rem 1rem;
+  border-radius: 50px 0 0 0;
+  background: linear-gradient(180deg, #324467, #283142);
+  transition: all 0.3s ease-in-out;
+  position: sticky;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.nav.nav-active {
+  width: 6.4rem;
+}
+.nav__logo {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  transition: all 200ms ease-in;
+}
+.nav-active .nav__logo {
+  font-size: 1.2rem;
+}
+.nav__items {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.nav__items::-webkit-scrollbar {
+  display: none;
+}
+.nav__link {
+  color: #fff;
+  padding: 1rem;
+  transition: all 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  font-size: 1.4rem;
+}
+.nav__link span,
+.nav__link svg {
+  pointer-events: none;
+}
+.nav-active .nav__link span {
+  display: none;
+}
+.nav__link svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+}
+
+.nav__link:hover {
+  background-color: #eef2f8;
+  color: #2c4982;
+}
+
+.app-version {
+  color: #efefef;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-header {
+  height: 10rem;
+}
+.nav-active + main .app-header {
+  height: 7rem;
+}
+.app-version svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: all 200ms ease-in;
+  display: none;
+}
+.nav-active .app-version svg {
+  transform: rotate(0deg);
+}
+.nav-active .app-version .app-version__label {
+  display: none;
+}
+#app {
+  width:75vw;
+  padding: 1.5rem;
+}
+.nav-active + #app{
+  width: calc(100vw - 6.4rem);
+}
+
+/* mini-sidebar */
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .app-version svg {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 1400px) {
+}
